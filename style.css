@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #4facfc 0%, #00f2fe 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.container {
+    background: white;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+h1 {
+    color: #0077ff;
+    margin-bottom: 8px;
+    font-size: clamp(22px, 5vw, 32px); /* screen ke hisab se size change */
+}
+
+p {
+    font-size: clamp(14px, 3vw, 16px);
+}
+
+.hangman-box {
+    margin: 15px 0;
+}
+
+#hangman {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+}
+
+#head, #body, #arm1, #arm2, #leg1, #leg2 {
+    visibility: hidden;
+}
+
+.word-box {
+    font-size: clamp(20px, 6vw, 32px); /* mobile pe chota ho jayega */
+    letter-spacing: clamp(5px, 2vw, 15px);
+    margin: 20px 0;
+    font-weight: bold;
+    color: #333;
+    min-height: 50px;
+    word-break: break-word;
+}
+
+.keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    margin: 20px 0;
+}
+
+.key {
+    width: clamp(32px, 9vw, 45px); /* mobile pe button chote */
+    height: clamp(32px, 9vw, 45px);
+    border: 2px solid #0077ff;
+    background: white;
+    border-radius: 8px;
+    font-size: clamp(14px, 4vw, 18px);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.key:hover {
+    background: #0077ff;
+    color: white;
+}
+
+.key:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    color: #777;
+}
+
+#message {
+    font-size: clamp(16px, 4vw, 20px);
+    font-weight: bold;
+    margin: 15px 0;
+    min-height: 30px;
+}
+
+#restart {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px 30px;
+    background: #0077ff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: clamp(14px, 4vw, 16px);
+    cursor: pointer;
+}
+
+#restart:hover {
+    background: #0056b3;
+}
+
+.win { color: #28a745; }
+.lose { color: #dc3545; }
+
+/* Extra small screens ke liye */
+@media (max-width: 400px) {
+    .container {
+        padding: 15px;
+    }
+    .keyboard {
+        gap: 4px;
+    }
+}
